@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xtreme Project Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -100,6 +101,65 @@
         .btn:hover { background-color: #555; }
         .btn i { font-size: 1rem; }
 
+        /* Overview 섹션 스타일 */
+        .overview-section {
+            text-align: left; /* 제목 왼쪽 정렬 */
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* 갤러리 레이아웃 */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* 줄 간격 */
+            margin-bottom: 20px;
+        }
+        
+        /* 윗줄: 큰 이미지 2개 배치 (50:50) */
+        .grid-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 1:1 비율 */
+            gap: 10px; /* 이미지 사이 간격 */
+        }
+        
+        /* 아랫줄: 작은 이미지 6개 배치 */
+        .grid-small {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6개를 균등 분할 */
+            gap: 5px; /* 작은 이미지 사이 간격은 좀 더 좁게 */
+        }
+        
+        /* 모바일 대응 (화면이 작아지면) */
+        @media (max-width: 768px) {
+            .grid-large { grid-template-columns: 1fr; } /* 큰 거 1줄로 */
+            .grid-small { grid-template-columns: repeat(3, 1fr); } /* 작은 거 3개씩 2줄로 */
+        }
+        
+        /* 이미지 공통 스타일 */
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px; /* 모서리 살짝 둥글게 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 살짝 그림자 */
+        }
+        
+        /* 설명 텍스트 스타일 */
+        .overview-text {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.6;
+            text-align: justify; /* 양쪽 정렬 */
+        }
+
     </style>
 </head>
 <body>
@@ -108,29 +168,28 @@
         <div class="logo">EgoXtreme 🚀</div> <div class="menu">
             <a href="#">About</a>
             <a href="#">Dataset</a>
-            <a href="#">Challenge</a>
+            <a href="#">Video</a>
             <a href="#">Citation</a>
+            <a href="#">Team</a>
         </div>
     </nav>
 
     <div class="container">
         <h1>EgoXtreme Dataset</h1>
         <div class="subtitle">
-            Robust Object Pose Estimation in Egocentric Views<br>under Extreme Conditions
+            A Dataset for Robust Object Pose Estimation in Egocentric Views<br>under Extreme Conditions
         </div>
 
         <div class="authors">
-            <span>Gil-Dong Hong<sup>1</sup></span>
-            <span>Chul-Soo Kim<sup>2</sup></span>
-            <span>Young-Hee Lee<sup>1</sup></span>
+            <span>AAAA<sup>1</sup></span>
         </div>
 
         <div class="affiliations">
-            <sup>1</sup>Hankook University &nbsp;&nbsp; <sup>2</sup>Samsung Electronics
+            <sup>1</sup>AAAA University
         </div>
 
         <div class="conference">
-            Computer Vision and Pattern Recognition (CVPR) 2026
+            AAAA (2026)
         </div>
 
         <div class="buttons">
@@ -142,9 +201,40 @@
         <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 
         <p style="color: #666;">
-            (여기에 Teaser Video나 Abstract를 넣으시면 됩니다.)
+            https://youtu.be/kUFocvaZ91A
         </p>
     </div>
+
+    <div class="overview-section">
+    <h2 class="section-title">Dataset Overview</h2>
+    
+    <div class="gallery-container">
+        
+        <div class="grid-large">
+            <img src="https://github.com/taegyoun88/Xtreme/blob/main/Teaser_2.pdf" alt="Scene 1">
+        </div>
+
+        <div class="grid-small">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 1">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 2">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 3">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 4">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 5">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 6">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 7">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 8">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 9">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 10">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 11">
+            <img src="https://via.placeholder.com/300x200" alt="Ex 12">
+        </div>
+    </div>
+
+    <p class="overview-text">
+        <strong>EgoXtreme</strong> is a large-scale dataset capturing ground-truth 3D object poses...
+        (여기에 논문의 Abstract나 데이터셋 설명을 적으시면 됩니다. 보여주신 예시처럼 
+        <span style="color: blue;">blue</span> 나 <span style="color: red;">red</span> 색상도 넣을 수 있습니다.)
+    </p>
 
 </body>
 </html>
