@@ -1,15 +1,17 @@
-EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
-EgoXtreme is a novel, large-scale dataset designed for robust egocentric 6D object pose estimation under extreme conditions.
+# EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
+**EgoXtreme** is a novel, large-scale dataset designed for robust egocentric 6D object pose estimation under extreme conditions.
 
-News
+[Project page](https://taegyoun88.github.io/Xtreme/) [Paper] [Dataset]
 
-Dataset Download
-Please register, sign the dataset license and download the dataset at...
+## News
 
-Dataset Information
+## Dataset Download
+Please register, sign the dataset license and download the dataset at [Dataset]
+
+## Dataset Information
 EgoXtreme is a novel large-scale dataset designed for robust egocentric 6D object pose estimation under extreme environmental conditions. The dataset comprises approximately 1.3 million frames with a total duration of 775.5 minutes (~12.9 hours). It was captured at 30 fps using Aria glasses, providing high-resolution 1408 $\times$ 1408 raw fisheye RGB images along with their undistorted versions.The dataset features 15 participants performing diverse interactions with 13 different objects (including sports equipment, assembly blocks, and emergency supplies). It is divided into training (518.8 min), validation (80.7 min), and test (176 min) sets across three challenging scenarios: Industrial Maintenance, Sports, and Emergency Rescue.
 
-Scenario Configurations
+## Scenario Configurations
 The detailed configurations of illumination and environmental conditions for each scenario are summarized below:
 | **Scenario** | **Standard**<br><sub>(normal, middle, high)</sub> | **Extreme**<br><sub>(low)</sub> | **Extreme**<br><sub>(head)</sub> | **Extreme**<br><sub>(flash)</sub> | **Extreme**<br><sub>(warning)</sub> | **Extreme**<br><sub>(green)</sub> | **Smoke** | **Object** |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -17,13 +19,14 @@ The detailed configurations of illumination and environmental conditions for eac
 | **Sports** | ✔️ | ✔️ | | | | | ✔️ | 5 |
 | **Emergency** | ✔️ | ✔️ | | | ✔️ | ✔️ | ✔️ | 3 |
 
-Dataset Documentation
+## Dataset Documentation
 All annotation files (*.json) and model information strictly follow the BOP (Benchmark for 6D Object Pose Estimation) format. Please refer to the BOP Challenge website for detailed format specifications.
 
-Directory Structure
+## Directory Structure
 The structure of the EgoXtreme dataset is organized as follows.
-Note: To reduce storage size, rgb_undist and mask_undist folders are not included in the initial download. Please refer to the Undistortion Guide section below to generate them.
+Note: To reduce storage size, rgb_undist and mask_undist folders are not included in the initial download. Please refer to the Undistortion section below to generate them.
 
+```
 EgoXtreme
 ├── detections/                                  # Default detections (CNOS + SAM)
 │   ├── cnos-sam_egoxtreme-test_sports.json
@@ -57,40 +60,52 @@ EgoXtreme
 │   ├── undistortion.py                          # Script to generate undistorted data
 │   └── visualization.py                         # Helper script to visualize 6D pose
 └── camera.json
+```
 
-Undistortion Guide
+## Undistortion
 Due to the large file size, rgb_undist and mask_undist folders are not included in the dataset. You can generate them using the provided script.
 
 Run the following command:
 
+```
 # Example: Process specific scene
 python tools/undistortion.py --data_dir ./data/train --scene_id 000000
 
 # Example: Process all scenes in train/test set
 python tools/undistortion.py --data_dir ./data/train --all
+```
 
-Visualization
+## Visualization
 To visualize the Ground Truth pose on the images
+
+```
 python tools/visualize_pose.py --data_dir ./data/test --scene_id 11
+```
 
-Baseline Results
-| Scenario | Light | Smoke | FoundPose [33]<br>0.1d | FoundPose [33]<br>0.2d | FoundPose [33]<br>0.3d | GigaPose [32]<br>0.1d | GigaPose [32]<br>0.2d | GigaPose [32]<br>0.3d | PicoPose [29]<br>0.1d | PicoPose [29]<br>0.2d | PicoPose [29]<br>0.3d |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Sports** | Standard | | 0.53 | 1.55 | 4.72 | 4.12 | 11.77 | 24.64 | 3.13 | 9.48 | 24.61 |
-| | Extreme | | 0.18 | 0.78 | 2.42 | 3.11 | 9.19 | 19.04 | 1.80 | 6.61 | 17.86 |
-| **Maintenance** | Standard | | 21.02 | 30.53 | 37.61 | 33.64 | 48.84 | 62.77 | 39.27 | 62.42 | 76.84 |
-| | Extreme | | 13.78 | 22.94 | 30.03 | 19.78 | 32.20 | 45.52 | 26.44 | 47.18 | 64.09 |
-| | Standard | ✔️ | 14.44 | 22.49 | 30.00 | 23.01 | 37.87 | 52.86 | 26.37 | 46.05 | 59.87 |
-| | Extreme | ✔️ | 11.19 | 18.57 | 25.63 | 17.56 | 30.35 | 45.11 | 20.97 | 38.50 | 52.30 |
-| **Emergency** | Standard | | 6.31 | 11.96 | 12.88 | 22.03 | 40.29 | 46.34 | 22.67 | 59.11 | 67.83 |
-| | Extreme | | 0.10 | 0.29 | 0.56 | 9.40 | 14.75 | 21.30 | 9.18 | 27.59 | 36.23 |
-| | Standard | ✔️ | 3.52 | 9.62 | 12.12 | 16.25 | 35.28 | 44.91 | 19.66 | 61.35 | 72.82 |
-| | Extreme | ✔️ | 0.11 | 0.60 | 0.76 | 7.07 | 15.26 | 21.54 | 9.45 | 24.19 | 31.54 |
+## Baseline Results
+We established baselines using recent state-of-the-art RGB-only zero-shot models ([FoundPose](https://github.com/facebookresearch/foundpose), [GigaPose](https://github.com/nv-nguyen/gigapose), [PicoPose](https://github.com/foollh/PicoPose)) on the three scenarios of the **EgoXtreme** dataset.
+The results are evaluated using the **ADD(-S) recall** metric at **0.1d** threshold.
 
-Citation
-If you find this dataset useful for your research, please cite our paper:코드 스니펫@inproceedings{egoxtreme2026,
+| Scenario | Light | Smoke | FoundPose | GigaPose | PicoPose |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **Sports** | Standard | | 0.53 | 4.12 | 3.13 |
+| | Extreme | | 0.18 | 3.11 | 1.80 |
+| **Maintenance** | Standard | | 21.02 | 33.64 | 39.27 |
+| | Extreme | | 13.78 | 19.78 | 26.44 |
+| | Standard | ✔️ | 14.44 | 23.01 | 26.37 |
+| | Extreme | ✔️ | 11.19 | 17.56 | 20.97 |
+| **Emergency** | Standard | | 6.31 | 22.03 | 22.67 |
+| | Extreme | | 0.10 | 9.40 | 9.18 |
+| | Standard | ✔️ | 3.52 | 16.25 | 19.66 |
+| | Extreme | ✔️ | 0.11 | 7.07 | 9.45 |
+
+## Citation
+
+```
+@inproceedings{egoxtreme2026,
   title={EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions},
   author={Hong, Gil Dong and Kim, Chul Soo},
   booktitle={AAAA},
   year={2026}
 }
+```
