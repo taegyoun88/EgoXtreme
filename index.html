@@ -110,7 +110,13 @@
 <body>
 
     <nav>
-        <div class="logo">EgoXtreme 🚀</div>
+        <div class="logo">EgoXtreme
+            <span class="logo-icons">
+                <i class="fas fa-table-tennis-paddle-ball" title="Table Tennis"></i>
+                <i class="fas fa-wrench" title="Wrench"></i>
+                <i class="fas fa-fire-extinguisher" title="Fire Extinguisher"></i>
+            </span>
+        </div>
         <div class="menu">
             <a href="#about">About</a>
             <a href="#dataset">Dataset</a>
@@ -162,24 +168,14 @@
             
             <div class="gallery-container">
                 <div class="grid-large">
-                    <img src="https://via.placeholder.com/800x400?text=Teaser+Image+(Please+Convert+PDF+to+JPG)" alt="Teaser Scene">
-                </div>
-
-                <div class="grid-small">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 1">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 2">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 3">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 4">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 5">
-                    <img src="https://via.placeholder.com/300x200" alt="Ex 6">
+                    <img src="https://github.com/taegyoun88/Xtreme/blob/main/Teaser.jpg" alt="Teaser Scene">
                 </div>
             </div>
 
             <p class="overview-text">
                 <strong>EgoXtreme</strong> is a novel, large-scale dataset designed for robust egocentric 6D object pose estimation under extreme conditions.
                 Specifically, 8 illumination conditions are used across three scenarios, and smoke is included in specific scenes.
-                These conditions, combined with severe motion blur, make accurate 6D object pose estimation extremely challenging. 
-                (<span style="color: blue;">blue</span> for camera wearers and <span style="color: red;">red</span> for interactors).
+                These conditions, combined with severe motion blur, make accurate 6D object pose estimation extremely challenging.
             </p>
         </section>
 
@@ -187,7 +183,7 @@
             <h2 class="section-title">Citation</h2>
             <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
 @inproceedings{egoxtreme2026,
-  title={EgoXtreme: Robust Object Pose Estimation...},
+  title={EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions},
   author={Hong, Gil Dong and Kim, Chul Soo},
   booktitle={AAAA},
   year={2026}
