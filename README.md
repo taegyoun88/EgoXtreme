@@ -6,10 +6,10 @@
 ![EgoXtreme Sample](egoxtreme_sample.jpg)
 
 ## News
-(2026-02-21) Our paper has been accepted to CVPR 2026! The full version is now available on arXiv.
+(2026-02-21) Our paper has been accepted to CVPR 2026! The full version is now available on [arXiv].
 
 ## Dataset Download
-Please register, sign the dataset license and download the dataset at [Dataset]
+Please register, sign the dataset license and download the dataset at [Dataset] (Coming Soon)
 
 ## Requirements
 + **[hand_tracking_toolkit](https://github.com/facebookresearch/hand_tracking_toolkit)**
@@ -88,12 +88,13 @@ To visualize the Ground Truth pose on the images.
 
 ```
 # Visualize specific scene (Add --undist for undistorted images, --im_id for single frame)
-python tools/visualize_pose.py --data_dir ./data/test --scene_id 000000 --models_dir ./models [--undist] [--im_id 0]
+python tools/visualization.py --data_dir ./data/test --scene_id 000000 --models_dir ./models [--undist] [--im_id 0]
 ```
 
 ## Baseline Results
 We established baselines using recent state-of-the-art RGB-only zero-shot models ([FoundPose](https://github.com/facebookresearch/foundpose), [GigaPose](https://github.com/nv-nguyen/gigapose), [PicoPose](https://github.com/foollh/PicoPose)) on the three scenarios of the **EgoXtreme** dataset.
 The results are evaluated using the **ADD(-S) recall** metric at **0.1d** threshold.
+Full baseline results including 0.2d and 0.3d can be found in our paper.
 
 | Scenario | Light | Smoke | FoundPose | GigaPose | PicoPose |
 | :---: | :---: | :---: | :---: | :---: | :---: |
