@@ -6,6 +6,7 @@
 ![EgoXtreme Sample](egoxtreme_sample.jpg)
 
 ## News
+(2026-02-21) Our paper has been accepted to CVPR 2026! The full version is now available on arXiv.
 
 ## Dataset Download
 Please register, sign the dataset license and download the dataset at [Dataset]
