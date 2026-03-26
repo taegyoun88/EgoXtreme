@@ -1,15 +1,22 @@
 # EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
 **EgoXtreme** is a novel, large-scale dataset designed for robust egocentric 6D object pose estimation under extreme conditions.
 
-[Project page](https://taegyoun88.github.io/EgoXtreme/) [Paper] [Dataset]
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://taegyoun88.github.io/EgoXtreme/) 
+[![Paper](https://img.shields.io/badge/arXiv-Paper_Coming_Soon-b31b1b.svg)](#) 
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Train%2FVal-yellow)](https://huggingface.co/datasets/taegyoun88/egoxtreme)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Test_Set-orange)](https://huggingface.co/datasets/taegyoun88/egoxtreme-test)
 
 ![EgoXtreme Sample](egoxtreme_sample.jpg)
 
 ## News
-(2026-02-21) Our paper has been accepted to CVPR 2026! The full version is now available on [arXiv].
+**(2026-03-26)** The EgoXtreme dataset and arXiv preprint have been officially released!  
+**(2026-02-21)** Our paper has been accepted to **CVPR 2026**!
 
 ## Dataset Download
-Please register, sign the dataset license and download the dataset at [Dataset] (Coming Soon)
+The dataset is hosted on Hugging Face. We separate the test set (without GT) for benchmark evaluation.
+
+* **Train / Validation Set:** [taegyoun88/egoxtreme](https://huggingface.co/datasets/taegyoun88/egoxtreme)
+* **Test Set (without GT):** [taegyoun88/egoxtreme-test](https://huggingface.co/datasets/taegyoun88/egoxtreme-test)
 
 ## Requirements
 + **[hand_tracking_toolkit](https://github.com/facebookresearch/hand_tracking_toolkit)**
