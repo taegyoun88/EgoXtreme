@@ -34,6 +34,19 @@ The detailed configurations of illumination and environmental conditions for eac
 | **Sports** | ✔️ | ✔️ | | | | | ✔️ | 5 |
 | **Emergency** | ✔️ | ✔️ | | | ✔️ | ✔️ | ✔️ | 3 |
 
+To facilitate scenario-specific training and evaluation, below is the mapping of Scene IDs to their corresponding scenarios across the dataset splits:
+| Split | Scenario | Scene IDs |
+| :--- | :--- | :--- |
+| **Train** | Maintenance | `000000` - `000211` |
+| | Sports | `000212` - `000417` |
+| | Emergency | `000418` - `000573` |
+| **Validation** | Maintenance | `000000` - `000039` |
+| | Sports | `000040` - `000067` |
+| | Emergency | `000068` - `000079` |
+| **Test** | Maintenance | `000000` - `000095` |
+| | Sports | `000096` - `000179` |
+| | Emergency | `000180` - `000191` |
+
 ## Dataset Documentation
 All annotation files (*.json) and model information strictly follow the BOP (Benchmark for 6D Object Pose Estimation) format. Please refer to the BOP Challenge website for detailed format specifications.
 
