@@ -56,10 +56,6 @@ Note: To reduce storage size, rgb_undist and mask_undist folders are not include
 
 ```
 EgoXtreme
-├── detections/                                  # Default detections (CNOS + SAM)
-│   ├── cnos-sam_egoxtreme-test_sports.json
-│   ├── cnos-sam_egoxtreme-test_maintenance.json
-│   └── ...
 ├── models/
 │   ├── modles_info.json
 │   ├── obj_01.ply
