@@ -48,7 +48,7 @@ To facilitate scenario-specific training and evaluation, below is the mapping of
 | | Emergency | `000180` - `000191` |
 
 ## Dataset Documentation
-All annotation files (*.json) and model information strictly follow the BOP (Benchmark for 6D Object Pose Estimation) format. Please refer to the BOP Challenge website for detailed format specifications.
+All annotation files (*.json) and model information follow the BOP (Benchmark for 6D Object Pose Estimation) format. Please refer to the BOP Challenge website for detailed format specifications.
 
 ## Directory Structure
 The structure of the EgoXtreme dataset is organized as follows.
