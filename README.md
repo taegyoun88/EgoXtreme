@@ -24,7 +24,9 @@ The dataset is hosted on Hugging Face. We separate the test set (without GT) for
 + **open3d**
 
 ## Dataset Information
-EgoXtreme is a novel large-scale dataset designed for robust egocentric 6D object pose estimation under extreme environmental conditions. The dataset comprises approximately 1.3 million frames with a total duration of 775.5 minutes (~12.9 hours). It was captured at 30 fps using Aria glasses, providing high-resolution 1408 $\times$ 1408 raw fisheye RGB images along with their undistorted versions.The dataset features 15 participants performing diverse interactions with 13 different objects (including sports equipment, assembly blocks, and emergency supplies). It is divided into training (518.8 min), validation (80.7 min), and test (176 min) sets across three challenging scenarios: Industrial Maintenance, Sports, and Emergency Rescue.
+EgoXtreme is a novel large-scale dataset designed for robust egocentric 6D object pose estimation under extreme environmental conditions. The dataset comprises approximately 1.3 million frames with a total duration of 775.5 minutes (~12.9 hours). It was captured at 30 fps using Aria glasses, providing high-resolution 1408 $\times$ 1408 raw fisheye RGB images along with their undistorted versions.
+
+The dataset features 15 participants performing diverse interactions with 13 different objects (including sports equipment, assembly blocks, and emergency supplies). It is divided into training (518.8 min), validation (80.7 min), and test (176 min) sets across three challenging scenarios: Industrial Maintenance, Sports, and Emergency Rescue.
 
 ## Scenario Configurations
 The detailed configurations of illumination and environmental conditions for each scenario are summarized below:
@@ -48,7 +50,7 @@ To facilitate scenario-specific training and evaluation, below is the mapping of
 | | Emergency | `000180` - `000191` |
 
 ## Dataset Documentation
-All annotation files (*.json) and 3D model information follow the BOP format. Please refer to the BOP Challenge website for detailed format specifications.
+All files (*.json) and 3D model information follow the BOP format. Please refer to the BOP Challenge website for detailed format specifications.
 
 ## Directory Structure
 The structure of the EgoXtreme dataset is organized as follows.
