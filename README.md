@@ -1,8 +1,7 @@
 # EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
-**EgoXtreme** is a novel, large-scale dataset designed for robust egocentric 6D object pose estimation under extreme conditions.
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://taegyoun88.github.io/EgoXtreme/) 
-[![Paper](https://img.shields.io/badge/arXiv-Paper_Coming_Soon-b31b1b.svg)](#) 
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://arxiv.org/abs/2603.25135)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Train%2FVal-yellow)](https://huggingface.co/datasets/taegyoun88/egoxtreme)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Test_Set-orange)](https://huggingface.co/datasets/taegyoun88/egoxtreme-test)
 
