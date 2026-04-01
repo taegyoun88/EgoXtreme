@@ -5,7 +5,7 @@
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Train%2FVal-yellow)](https://huggingface.co/datasets/taegyoun88/egoxtreme)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Test_Set-orange)](https://huggingface.co/datasets/taegyoun88/egoxtreme-test)
 
-![EgoXtreme Sample](egoxtreme_sample.jpg)
+![EgoXtreme Sample](images/egoxtreme_sample.jpg)
 
 ## News
 **(2026-03-26)** The EgoXtreme dataset and arXiv preprint have been officially released!  
