@@ -180,7 +180,7 @@
             
             <div class="gallery-container">
                 <div class="grid-large">
-                    <img src="https://raw.githubusercontent.com/taegyoun88/Xtreme/main/egoxtreme_sample.jpg" alt="Teaser Scene">
+                    <img src="images/egoxtreme_sample.jpg" alt="Teaser Scene">
                 </div>
             </div>
 
@@ -192,10 +192,10 @@
         </section>
 
         <section id="scenarios" class="overview-section">
-            <h2 class="section-title">Diverse Scenarios & Extreme Conditions</h2>
+            <h2 class="section-title">Scenarios</h2>
             <p class="overview-text" style="margin-bottom: 30px;">
                 EgoXtreme is specifically designed to tackle <strong>extreme environmental conditions</strong> in egocentric views. 
-                The dataset introduces highly challenging factors such as <strong>fast motions, diverse illumination changes, and dense smoke</strong>. 
+                The dataset introduces highly challenging factors such as <strong>fast motions, diverse illumination changes, and smoke</strong>. 
                 Below are the sample sequences captured under these practical scenarios.
             </p>
 
@@ -221,7 +221,7 @@
             </div>
 
             <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-                <div style="width: 60%; min-width: 300px; text-align: center;">
+                <div style="width: 48%; min-width: 300px; text-align: center;">
                     <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/sports.mp4" type="video/mp4">
                     </video>
@@ -340,6 +340,18 @@
                     </video>
                     <div style="font-size: 0.85rem; margin-top: 5px; color: #555; font-weight: bold;">Flashlight</div>
                 </div>
+            </div>
+        </section>
+
+        <section id="results" class="overview-section">
+            <h2 class="section-title">Results</h2>
+            <p class="overview-text" style="margin-bottom: 30px;">
+                We evaluated recent state-of-the-art 6D object pose estimation models on the EgoXtreme benchmark. 
+                As shown below, while existing models perform reasonably well under standard conditions, <strong>their performance drops significantly under the extreme factors</strong> (e.g., severe motion blur, low light, and dense smoke). This highlights the highly challenging nature of our dataset and leaves significant room for future research.
+            </p>
+
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="./images/baseline_evaluation.png" alt="Baseline Evaluation Results" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
         </section>
         
