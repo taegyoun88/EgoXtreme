@@ -121,10 +121,9 @@
             <a href="#about">About</a>
             <a href="#scenarios">Scenarios</a>
             <a href="#objects">Objects</a>
+            <a href="#results">Results</a>
             <a href="#dataset">Download</a>
-            <!-- <a href="#video">Video</a> -->
             <a href="#citation">Citation</a>
-            <!-- <a href="#team">Team</a> -->
         </div>
     </nav>
 
@@ -211,37 +210,37 @@
                     <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 14 / 9; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/maintenance.mp4" type="video/mp4">
                     </video>
-                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">🛠️ Maintenance</p>
+                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">Maintenance</p>
                 </div>
                 <div style="width: 48%; min-width: 300px; text-align: center;">
                     <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 14 / 9; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/maintenance_smoke.mp4" type="video/mp4">
                     </video>
-                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">🛠️ Maintenance (Smoke)</p>
+                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">Maintenance (Smoke)</p>
                 </div>
             </div>
 
             <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-                <div style="width: 48%; min-width: 300px; text-align: center;">
+                <div style="width: calc(48% * 9 / 14); min-width: 193px; text-align: center;">
                     <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/sports.mp4" type="video/mp4">
                     </video>
-                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">🏓 Sports</p>
+                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">Sports</p>
                 </div>
             </div>
 
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2%; margin-bottom: 50px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2%; margin-bottom: 30px;">
                 <div style="width: 48%; min-width: 300px; text-align: center;">
                     <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 14 / 9; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/emergency.mp4" type="video/mp4">
                     </video>
-                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">🧯 Emergency</p>
+                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">Emergency</p>
                 </div>
                 <div style="width: 48%; min-width: 300px; text-align: center;">
                     <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 14 / 9; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <source src="./videos/emergency_smoke.mp4" type="video/mp4">
                     </video>
-                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">🧯 Emergency (Smoke)</p>
+                    <p style="margin-top: 10px; font-size: 1.1rem; font-weight: bold; color: #444;">Emergency (Smoke)</p>
                 </div>
             </div>
         </section>
@@ -347,8 +346,8 @@
         <section id="results" class="overview-section">
             <h2 class="section-title">Results</h2>
             <p class="overview-text" style="margin-bottom: 30px;">
-                We evaluated recent state-of-the-art 6D object pose estimation models on the EgoXtreme benchmark. 
-                As shown below, while existing models perform reasonably well under standard conditions, <strong>their performance drops significantly under the extreme factors</strong> (e.g., severe motion blur, low light, and dense smoke). This highlights the highly challenging nature of our dataset and leaves significant room for future research.
+                We evaluated recent state-of-the-art 6D object pose estimation models, focusing on RGB-only zero-shot approaches on the EgoXtreme benchmark. 
+                As shown below, while existing models perform reasonably well under standard conditions, their performance drops significantly under the extreme factors (e.g., motion blur, low light, and smoke). This highlights the highly challenging nature of our dataset and leaves significant room for future research.
             </p>
 
             <div style="text-align: center; margin-bottom: 50px;">
@@ -369,13 +368,6 @@
                 For detailed information of the data format and structure, please check our <a href="https://github.com/taegyoun88/EgoXtreme" target="_blank"><b>GitHub repository</b></a>.
             </p>
         </section>
-        
-        <!-- <section id="video">
-            <h2 class="section-title">Video</h2>
-            <p>
-                Our cam-ready video here...
-            </p>            
-        </section> -->
 
         <section id="citation" style="text-align: left; margin-bottom: 50px;">
             <h2 class="section-title">Citation</h2>
@@ -388,13 +380,6 @@
 }
             </pre>
         </section>
-
-        <!-- <section id="team" style="text-align: left;">
-            <h2 class="section-title">Team</h2>
-            <p>
-                Our team consists of researchers from...
-            </p>
-        </section> -->
 
     </div>
 
