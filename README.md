@@ -29,11 +29,59 @@ The dataset features 15 participants performing diverse interactions with 13 dif
 
 ## Scenario Configurations
 The detailed configurations of illumination and environmental conditions for each scenario are summarized below:
-| **Scenario** | **Standard**<br><sub>(normal, middle, high)</sub> | **Extreme**<br><sub>(low)</sub> | **Extreme**<br><sub>(head)</sub> | **Extreme**<br><sub>(flash)</sub> | **Extreme**<br><sub>(warning)</sub> | **Extreme**<br><sub>(green)</sub> | **Smoke** | **Object** |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Maintenance** | ✔️ | ✔️ | ✔️ | ✔️ | | | ✔️ | 5 |
-| **Sports** | ✔️ | ✔️ | | | | | ✔️ | 5 |
-| **Emergency** | ✔️ | ✔️ | | | ✔️ | ✔️ | ✔️ | 3 |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Scenario</th>
+      <th rowspan="2">Standard<br><span style="font-size: 0.8em; font-weight: normal;">(normal, middle, high)</span></th>
+      <th colspan="5">Extreme</th>
+      <th rowspan="2">Smoke</th>
+      <th rowspan="2">Object</th>
+    </tr>
+    <tr style="font-size: 0.85em; font-weight: normal;">
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;low&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;head&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th>&nbsp;&nbsp;&nbsp;flash&nbsp;&nbsp;&nbsp;</th>
+      <th>&nbsp;&nbsp;warning&nbsp;&nbsp;</th>
+      <th style="border-right: 1px solid rgba(128, 128, 128, 0.2);">&nbsp;&nbsp;&nbsp;green&nbsp;&nbsp;&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody style="text-align: center;">
+    <tr>
+      <td style="text-align: left;"><strong>Maintenance</strong></td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td></td>
+      <td></td>
+      <td>✔️</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><strong>Sports</strong></td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><strong>Emergency</strong></td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td></td>
+      <td></td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
 
 To facilitate scenario-specific training and evaluation, below is the mapping of Scene IDs to their corresponding scenarios across the dataset splits:
 | Split | Scenario | Scene IDs |
@@ -47,6 +95,8 @@ To facilitate scenario-specific training and evaluation, below is the mapping of
 | **Test** | Maintenance | `000000` - `000095` |
 | | Sports | `000096` - `000179` |
 | | Emergency | `000180` - `000191` |
+
+For further fine-grained environmental attributes (e.g., specific light conditions and the presence of smoke) of each sequence, please refer to the sequence-level metadata JSON files.
 
 ## Dataset Documentation
 All files (*.json) and 3D model information follow the BOP format. Please refer to the BOP Challenge website for detailed format specifications.
@@ -82,10 +132,10 @@ EgoXtreme
 │   ├── test/
 │   │   ├── 000000/
 │   │   └── ...
-├── tools/
-│   ├── undistortion.py                          # Script to generate undistorted data
-│   └── visualization.py                         # Helper script to visualize 6D pose
-└── camera.json
+│   └── camera.json
+└── tools/
+    ├── undistortion.py                          # Script to generate undistorted data
+    └── visualization.py                         # Helper script to visualize 6D pose
 ```
 
 ## Undistortion
