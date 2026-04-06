@@ -49,36 +49,36 @@ The detailed configurations of illumination and environmental conditions for eac
   <tbody style="text-align: center;">
     <tr>
       <td style="text-align: left;"><strong>Maintenance</strong></td>
-      <td>✔️</td>
-      <td>✔️</td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
       <td></td>
       <td></td>
-      <td>✔️</td>
-      <td>5</td>
+      <td align="center">✔️</td>
+      <td align="center">5</td>
     </tr>
     <tr>
       <td style="text-align: left;"><strong>Sports</strong></td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-      <td>5</td>
+      <td align="center">5</td>
     </tr>
     <tr>
       <td style="text-align: left;"><strong>Emergency</strong></td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
       <td></td>
       <td></td>
-      <td>✔️</td>
-      <td>✔️</td>
-      <td>✔️</td>
-      <td>3</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">✔️</td>
+      <td align="center">3</td>
     </tr>
   </tbody>
 </table>
