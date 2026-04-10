@@ -8,6 +8,7 @@
 ![EgoXtreme Sample](images/egoxtreme_sample.jpg)
 
 ## News
+**(2026-04-09)** Our paper has been selected as the **Highlight** paper of **CVPR 2026**!  
 **(2026-03-26)** The EgoXtreme dataset and arXiv preprint have been officially released!  
 **(2026-02-21)** Our paper has been accepted to **CVPR 2026**!
 
