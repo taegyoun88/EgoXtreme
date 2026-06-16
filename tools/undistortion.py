@@ -15,7 +15,6 @@ g_mask_dir = None
 g_rgb_out = None
 g_mask_out = None
 g_scene_gt = None
-g_scene_gt_undist = None
 
 cv2.setNumThreads(0)
 num_workers = 32 # Customize your settings.
@@ -38,8 +37,8 @@ def build_undistortion_map(src_camera, dst_camera):
     map_y = src_win_pts[:, 1].reshape((H, W))
     return map_x, map_y
 
-def init_worker(map_x, map_y, rgb_dir, mask_dir, rgb_out, mask_out, scene_gt, scene_gt_undist):
-    global g_map_x, g_map_y, g_rgb_dir, g_mask_dir, g_rgb_out, g_mask_out, g_scene_gt, g_scene_gt_undist
+def init_worker(map_x, map_y, rgb_dir, mask_dir, rgb_out, mask_out, scene_gt):
+    global g_map_x, g_map_y, g_rgb_dir, g_mask_dir, g_rgb_out, g_mask_out, g_scene_gt
     g_map_x = map_x
     g_map_y = map_y
     g_rgb_dir = rgb_dir
@@ -47,8 +46,7 @@ def init_worker(map_x, map_y, rgb_dir, mask_dir, rgb_out, mask_out, scene_gt, sc
     g_rgb_out = rgb_out
     g_mask_out = mask_out
     g_scene_gt = scene_gt
-    g_scene_gt_undist = scene_gt_undist
-
+    
 def process_single_frame(frame_id):
     try:
         str_id = str(frame_id)
@@ -70,9 +68,7 @@ def process_single_frame(frame_id):
             return None
 
         current_objects = g_scene_gt[str_id]
-        expected_count = len(g_scene_gt_undist.get(str_id, []))
-        valid_idx = 0
-
+        
         for original_idx, _ in enumerate(current_objects):
             mask_path = g_mask_dir / f"{frame_id:06d}_{original_idx:06d}.png"
             if not mask_path.exists():
@@ -83,17 +79,10 @@ def process_single_frame(frame_id):
                  raise ValueError(f"[Error] Failed to read mask: {mask_path}")
 
             undist_mask = cv2.remap(raw_mask, g_map_x, g_map_y, interpolation=cv2.INTER_NEAREST)
-            
-            if cv2.countNonZero(undist_mask) < 10:
-                continue
                 
-            new_name = f"{frame_id:06d}_{valid_idx:06d}.png"
+            new_name = f"{frame_id:06d}_{original_idx:06d}.png"
             cv2.imwrite(str(g_mask_out / new_name), undist_mask, encode_param)
-            valid_idx += 1
-            
-        if valid_idx != expected_count:
-            return f"[Warning] Frame {frame_id}: Mismatch! Generated {valid_idx} vs Expect {expected_count}."
-        
+                    
         return None
 
     except Exception as e:
@@ -109,7 +98,6 @@ def process_scene_parallel(target_dir, stream_key='214-1'):
     paths = {
         "camera": target_dir / "scene_camera.json",
         "gt": target_dir / "scene_gt.json",
-        "gt_undist": target_dir / "scene_gt_undist.json"
     }
     
     missing_files = [p.name for p in paths.values() if not p.exists()]
@@ -122,8 +110,7 @@ def process_scene_parallel(target_dir, stream_key='214-1'):
 
     with open(paths["camera"], "r") as f: scene_camera = json.load(f)
     with open(paths["gt"], "r") as f: scene_gt = json.load(f)
-    with open(paths["gt_undist"], "r") as f: scene_gt_undist = json.load(f)
-
+    
     print(f"[{target_dir.name}] Building Map...", end=" ")
     
     first_id = list(scene_camera.keys())[0]
@@ -153,7 +140,7 @@ def process_scene_parallel(target_dir, stream_key='214-1'):
     frame_ids = sorted([int(k) for k in scene_camera.keys()])
     
     with Pool(processes=num_workers, initializer=init_worker, 
-              initargs=(map_x, map_y, rgb_dir, mask_dir, rgb_out, mask_out, scene_gt, scene_gt_undist)) as pool:
+              initargs=(map_x, map_y, rgb_dir, mask_dir, rgb_out, mask_out, scene_gt)) as pool:
         
         for result in tqdm(pool.imap_unordered(process_single_frame, frame_ids, chunksize=10), 
                            total=len(frame_ids), desc=f"Scene {target_dir.name}"):
